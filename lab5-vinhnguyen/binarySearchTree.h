@@ -119,7 +119,7 @@ void Node<T>::print() const
     if (left != nullptr) {
         left->print();
     }
-    cout << data << " " << endl;
+    cout << data << endl;
     if (right != nullptr) {
         right->print();
     }
@@ -149,7 +149,7 @@ BinarySearchTree<T>::BinarySearchTree(BinarySearchTree& tree) {
 
 template <typename T>
 BinarySearchTree<T>::~BinarySearchTree() {
-    root->delete_tree(root);
+    //root->delete_tree(root);
 }
 
 template <typename T>

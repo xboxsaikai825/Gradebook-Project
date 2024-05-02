@@ -3,8 +3,13 @@
 #include <string>
 #include <sstream>
 #include "menu.h"
-#include "assignment.h"
+#include "fstream"
+#include <iomanip>
 #include "binarySearchTree.h"
+#include "assignment.h"
+#include "grade.h"
+#include "faculty.h"
+#include "course.h"
 
 using namespace std;
 
@@ -29,9 +34,28 @@ private:
 
 	void doSave(); // save data to.csv file
 
+	// Read csv operations
+	void readAssignment(); // reads assignment-data.csv
+
+	void readCourse(); // reads course-data.csv
+
+	void readFaculty(); // reads faculty-data.csv
+
+	void readGrade(); // reads grade-data.csv
+
 	BinarySearchTree<Assignment> assignments;
+
 	BinarySearchTree<Assignment> quizzes;
+
 	BinarySearchTree<Assignment> labs;
+
 	BinarySearchTree<Assignment> midterm;
+
 	BinarySearchTree<Assignment> final;
+
+	BinarySearchTree<Grade> gradingScale;
+
+	BinarySearchTree<Course> courses;
+
+	BinarySearchTree<Faculty> faculty;
 };
