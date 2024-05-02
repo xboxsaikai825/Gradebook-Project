@@ -128,7 +128,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="assignment.cpp" />
-    <ClCompile Include="binary_tree.cpp" />
     <ClCompile Include="course.cpp" />
     <ClCompile Include="dateTime.cpp" />
     <ClCompile Include="dateType.cpp" />
