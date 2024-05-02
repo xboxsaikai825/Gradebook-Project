@@ -1,0 +1,41 @@
+Id,GroupId,Description,Start Date,End Date,Possible Points,Points
+1,1,Classes and Inheritance,2/5/2024 0:00:01,2/8/2024 11:59:00,5,0
+2,1,Classes and Inheritance - In class Assignment,2/8/2024 0:00:01,2/8/2024 11:59:00,10,0
+3,1,Class Overloading etc.,2/5/2024 0:00:01,2/8/2024 11:59:00,5,0
+4,1,Class Overloading - In class Assignment,2/9/2024 0:00:01,2/9/2024 11:59:00,10,0
+5,1,Data Structures and Algorithms,2/8/2024 0:00:01,2/22/2024 11:59:00,5,0
+6,1,Data Structures - In class Assignment,2/11/2024 0:00:01,2/11/2024 11:59:00,10,0
+7,1,Arrays and Vectors,2/22/2024 0:00:01,2/29/2024 11:59:00,5,0
+8,1,Arrays and Template - In class Assignment,2/22/2024 0:00:01,2/22/2024 11:59:00,10,0
+9,1,Stacks and Queues,3/29/2024 0:00:01,3/6/2024 11:59:00,5,0
+10,1,Arrays and Template - In class Assignment,3/6/2024 0:00:01,3/6/2024 11:59:00,10,0
+11,1,Sorting and Searching,3/13/2024 0:00:01,3/27/2024 11:59:00,5,0
+12,1,Sorting and Searching - In class Assignment,3/27/2024 0:00:01,3/27/2024 11:59:00,10,0
+13,1,"Maps, Hashtable and etc.",3/27/2024 0:00:01,4/17/2024 11:59:00,5,0
+14,1,Maps and and Hashtable - In class Assignment,4/17/2024 0:00:01,4/17/2024 11:59:00,10,0
+15,1,Tree Structures,4/10/2024 0:00:01,4/18/2024 11:59:00,5,0
+16,1,Tree Structures - In class Assignment,4/18/2024 0:00:01,4/18/2024 11:59:00,10,0
+17,1,BinaryTrees In class Assignment,4/21/2024 0:00:01,5/1/2024 11:59:00,5,0
+18,1,Binary Search Trees,4/21/2024 0:00:01,5/1/2024 11:59:00,5,0
+19,1,Binary Search Trees In class Assignment,4/21/2024 0:00:01,5/1/2024 11:59:00,10,0
+20,1,ZyBooks Participation,1/28/2024 0:00:01,2/1/2024 11:59:00,50,0
+21,2,Quiz 1,2/5/2024 0:00:01,2/8/2024 11:59:00,10,0
+22,2,Quiz 2,2/5/2024 0:00:01,2/8/2024 11:59:00,10,0
+23,2,Quiz 3,2/8/2024 0:00:01,2/22/2024 11:59:00,10,0
+24,2,Quiz 4,2/22/2024 0:00:01,2/29/2024 11:59:00,10,0
+25,2,Quiz 5,2/29/2024 0:00:01,3/6/2024 11:59:00,10,0
+26,2,Quiz 6,3/6/2024 0:00:01,3/13/2024 11:59:00,10,0
+27,2,Quiz 7,3/13/2024 0:00:01,3/27/2024 11:59:00,10,0
+28,2,Quiz 8,3/27/2024 0:00:01,11/17/2024 11:59:00,10,0
+29,2,Quiz 9,4/10/2024 0:00:01,4/18/2024 11:59:00,10,0
+30,3,Lab 1 Manage User Accounts,2/12/2024 0:00:01,2/23/2024 11:59:00,20,0
+31,3,Lab 2 Manage Contacts,2/22/2024 0:00:01,2/30/2024 11:59:00,20,0
+32,3,Lab 3 Linked List and Record Navigation,3/29/2024 0:00:01,3/16/2024 11:59:00,40,0
+33,3,Lab 4 Hashtable etc.,3/20/2024 0:00:01,4/16/2024 11:59:00,40,0
+34,3,Lab 5 Trees Grade Book,4/14/2024 0:00:01,5/09/2024 11:59:00,40,0
+35,4,Midterm Part 1 – True/False,3/14/2024 0:00:01,3/16/2024 11:59:00,50,0
+36,4,Midterm Part 2 – Multiple Choice,3/20/2024 0:00:01,3/04/2024 11:59:00,50,0
+37,4,Midterm Part 3 – Program,3/18/2024 18:30:00,3/18/2024 20:00:00,100,0
+38,5,Final Exam Part 1 - True/False,5/12/2024 0:00:01,5/14/2024 11:59:00,50,0
+39,5,Final Exam 2 – Multiple Choice,5/12/2024 0:00:01,5/14/2024 11:59:00,50,0
+40,5,Final Exam Part 3 – Program,5/14/2024 18:30:00,5/14/2024 20:00:00,200,0

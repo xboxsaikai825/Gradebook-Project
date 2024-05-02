@@ -1,8 +1,13 @@
 #include "gradeBookMenu.h"
 
+const string ASSIGNMENT_DATA = "assignment-data.csv";
+const string COURSE_DATA = "course-data.csv";
+const string FACULTY_DATA = "faculty-data.csv";
+const string GRADE_SCALE = "grade-scale.csv";
+
 enum COMMAND { LIST = '1', VIEW = '2', ADD = '3', EDIT = '4', DELETE = '5', CALC = '6', EXIT = '7' };
 
-GradeBookMenu::GradeBookMenu() : Menu("Main Menu") {
+GradeBookMenu::GradeBookMenu() : Menu("Grade Book") {
 	addOption("1) List all grades");
 	addOption("2) View an assignment");
 	addOption("3) Add a grade");
@@ -55,12 +60,15 @@ void GradeBookMenu::doList() { // display all data from the root of the tree.
 void GradeBookMenu::doView() { // view individual assignment and view group of assignments in rows and columns
 
 }
+
 void GradeBookMenu::doAdd(){ // add to tree.
 
 }
+
 void GradeBookMenu::doEdit(){ // edit any fields
 
 }
+
 void GradeBookMenu::doRemove(){ // remove a node from the tree
 
 }

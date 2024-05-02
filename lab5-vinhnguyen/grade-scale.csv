@@ -1,0 +1,6 @@
+GroupId,Section,Description,Weight(%)
+1,CS-124-01,Assignments,10
+2,CS-124-01,Quizzes,10
+3,CS-124-01,Labs,30
+4,CS-124-01,Midterm,20
+5,CS-124-01,Final Exam,30

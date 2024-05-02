@@ -73,16 +73,16 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\..\Downloads\grade-scale.csv">
+    <None Include="assignment-data.csv">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="..\..\..\..\Downloads\assignment-data.csv">
+    <None Include="course-data.csv">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="..\..\..\..\Downloads\course-data.csv">
+    <None Include="faculty-data.csv">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="..\..\..\..\Downloads\faculty-data.csv">
+    <None Include="grade-scale.csv">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>

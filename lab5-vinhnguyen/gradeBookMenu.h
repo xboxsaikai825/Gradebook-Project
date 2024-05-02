@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <sstream>
 #include "menu.h"
 #include "assignment.h"
 #include "binarySearchTree.h"
