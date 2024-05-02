@@ -1,7 +1,8 @@
 #include <iostream>
+#include "gradeBookMenu.h"
 
 using namespace std;
 
 int main() {
-	cout << "hello";
+	GradeBookMenu Menu;
 }

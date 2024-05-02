@@ -3,12 +3,12 @@
 
 using namespace std;
 
-class grade
+class Grade
 {
 public:
-	grade();
+	Grade();
 
-	grade(int id, string sect, string desc, int wei);
+	Grade(int id, string sect, string desc, int wei);
 private:
 	int groupId;
 	string section;

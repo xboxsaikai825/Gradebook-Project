@@ -3,12 +3,12 @@
 
 using namespace std;
 
-class course
+class Course
 {
 public:
-	course();
+	Course();
 
-	course(string ter, string sec, string name, int uni, string facId);
+	Course(string ter, string sec, string name, int uni, string facId);
 private:
 	string term;
 	string section;

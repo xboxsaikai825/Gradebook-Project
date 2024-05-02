@@ -1,6 +1,6 @@
 #include "course.h"
 
-course::course() {
+Course::Course() {
 	term = "";
 	section = "";
 	courseName = "";
@@ -8,7 +8,7 @@ course::course() {
 	facultyId = "";
 }
 
-course::course(string ter, string sec, string name, int uni, string facId) {
+Course::Course(string ter, string sec, string name, int uni, string facId) {
 	term = ter;
 	section = sec;
 	courseName = name;

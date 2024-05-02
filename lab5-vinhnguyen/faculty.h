@@ -3,12 +3,12 @@
 
 using namespace std;
 
-class faculty
+class Faculty
 {
 public:
-	faculty();
+	Faculty();
 
-	faculty(int, string first, string last, string depart, string add, string ci, string st, string zi, string em, string ph);
+	Faculty(int, string first, string last, string depart, string add, string ci, string st, string zi, string em, string ph);
 private:
 	int facultyId;
 	string firstName;

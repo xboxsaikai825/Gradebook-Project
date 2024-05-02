@@ -133,18 +133,26 @@
     <ClCompile Include="dateType.cpp" />
     <ClCompile Include="faculty.cpp" />
     <ClCompile Include="grade.cpp" />
+    <ClCompile Include="gradeBookMenu.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="menu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="assignment.h" />
-    <ClInclude Include="binary_tree.h" />
+    <ClInclude Include="binarySearchTree.h" />
     <ClInclude Include="course.h" />
     <ClInclude Include="dateTime.h" />
     <ClInclude Include="dateType.h" />
     <ClInclude Include="faculty.h" />
     <ClInclude Include="grade.h" />
+    <ClInclude Include="gradeBookMenu.h" />
     <ClInclude Include="menu.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\Downloads\assignment-data.csv" />
+    <None Include="..\..\..\..\Downloads\course-data.csv" />
+    <None Include="..\..\..\..\Downloads\faculty-data.csv" />
+    <None Include="..\..\..\..\Downloads\grade-scale.csv" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

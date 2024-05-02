@@ -4,12 +4,12 @@
 
 using namespace std;
 
-class assignment
+class Assignment
 {
 public:
-	assignment();
+	Assignment();
 
-	assignment(string i, string gid, string desc, DateTime st, DateTime en, int poss, int tot);
+	Assignment(string i, string gid, string desc, DateTime st, DateTime en, int poss, int tot);
 private:
 	string id;
 	string groupId;

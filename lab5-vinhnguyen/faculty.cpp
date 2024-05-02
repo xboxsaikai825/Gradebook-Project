@@ -1,6 +1,6 @@
 #include "faculty.h"
 
-faculty::faculty() {
+Faculty::Faculty() {
 	facultyId = 0;
 	firstName = "";
 	lastName = "";
@@ -13,7 +13,7 @@ faculty::faculty() {
 	phone = "";
 }
 
-faculty::faculty(int id, string first, string last, string depart, string add, string ci, string st, string zi, string em, string ph) {
+Faculty::Faculty(int id, string first, string last, string depart, string add, string ci, string st, string zi, string em, string ph) {
 	facultyId = id;
 	firstName = first;
 	lastName = last;

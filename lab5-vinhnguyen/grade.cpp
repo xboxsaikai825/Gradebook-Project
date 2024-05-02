@@ -1,13 +1,13 @@
 #include "grade.h"
 
-grade::grade() {
+Grade::Grade() {
 	groupId = 0;
 	section = "";
 	description = "";
 	weight = 0;
 }
 
-grade::grade(int id, string sect, string desc, int wei) {
+Grade::Grade(int id, string sect, string desc, int wei) {
 	groupId = id;
 	section = sect;
 	description = desc;

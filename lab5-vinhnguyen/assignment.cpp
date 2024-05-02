@@ -1,6 +1,6 @@
 #include "assignment.h"
 
-assignment::assignment() {
+Assignment::Assignment() {
 	id = "";
 	groupId = "";
 	description = "";
@@ -8,7 +8,7 @@ assignment::assignment() {
 	int totalPoints = 0;
 }
 
-assignment::assignment(string i, string gid, string desc, DateTime st, DateTime en, int poss, int tot) {
+Assignment::Assignment(string i, string gid, string desc, DateTime st, DateTime en, int poss, int tot) {
 	id = i;
 	groupId = gid;
 	description = desc;
