@@ -83,15 +83,42 @@ void GradeBookMenu::doView() { // view individual assignment and view group of a
 }
 
 void GradeBookMenu::doAdd(){ // add to tree.
-
+	string id, groupId, desc, start, end, possPoints, totPoints;
+	int total_assignments = assignments.get_total();
+	id = to_string(++total_assignments);
+	cout << "Enter the type of assignment (1)Assignment (2)Quiz (3)Lab (4)Midterm (5)Final: "; cin >> groupId;
+	cin.ignore();
+	cout << "Enter the description of the assignment: "; getline(cin, desc);
+	cout << "Enter the start date of the assignment (M/D/YYYY H:MM:SS): "; getline(cin, start);
+	cout << "Enter the end date of the assignment (M/D/YYYY H:MM:SS): "; getline(cin, end);
+	cout << "Enter the total points of the assignment: "; getline(cin, possPoints);
+	cout << "Enter the points earned on the assignment: "; getline(cin, totPoints);
+	DateTime st, en;
+	st.setDate(start);
+	en.setDate(end);
+	Assignment new_assignment(id, groupId, desc, st, en, stoi(possPoints), stoi(totPoints));
+	if (groupId == "1")
+		assignments.insert(new_assignment);
+	else if (groupId == "2")
+		quizzes.insert(new_assignment);
+	else if (groupId == "3")
+		labs.insert(new_assignment);
+	else if (groupId == "4")
+		midterm.insert(new_assignment);
+	else if (groupId == "5")
+		final.insert(new_assignment);
+	cout << "Assignment added." << endl;
 }
 
 void GradeBookMenu::doEdit(){ // edit any fields
-
+	// delete assignment
+	// call doAdd()
+	//done
 }
 
 void GradeBookMenu::doRemove(){ // remove a node from the tree
-
+	// find assignment
+	// delete
 }
 
 void GradeBookMenu::calculateGrade() { // implement your grade and display.

@@ -74,13 +74,18 @@ public:
     */
     void print() const;
 
-
     /**
        Assignment operator
     */
     BinarySearchTree<T>& operator=(BinarySearchTree<T>& other_tree);
 
+    /**
+       Get method
+    */
+    int get_total() const;
+
 private:
+    int total;
     void add_node(Node<T>* new_node);
     Node<T>* root;
 };
@@ -140,16 +145,23 @@ template <typename T>
 BinarySearchTree<T>::BinarySearchTree()
 {
     root = nullptr;
+    total = 0;
 }
 
 template <typename T>
 BinarySearchTree<T>::BinarySearchTree(BinarySearchTree& tree) {
     root = tree.root;
+    total = tree.total;
 }
 
 template <typename T>
 BinarySearchTree<T>::~BinarySearchTree() {
-    //root->delete_tree(root);
+    root->delete_tree(root);
+}
+
+template <typename T>
+int BinarySearchTree<T>::get_total() const {
+    return total;
 }
 
 template <typename T>
@@ -171,6 +183,7 @@ void BinarySearchTree<T>::insert(T element)
     else
     {
         add_node(new_node);
+        total++;
     }
 }
 
