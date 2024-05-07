@@ -60,19 +60,24 @@ void GradeBookMenu::init() {
 
 // Menu operations
 void GradeBookMenu::doList() { // display all data from the root of the tree.
-	cout << "ASSIGNMENTS" << endl;
+	cout << endl << "ASSIGNMENTS" << endl;
+	cout << "**************************************************" << endl;
 	assignments.print();
 
-	cout << "QUIZZES" << endl;
+	cout << endl << "QUIZZES" << endl;
+	cout << "**************************************************" << endl;
 	quizzes.print();
 
-	cout << "LABS" << endl;
+	cout << endl << "LABS" << endl;
+	cout << "**************************************************" << endl;
 	labs.print();
 
-	cout << "MIDTERMS" << endl;
+	cout << endl << "MIDTERMS" << endl;
+	cout << "**************************************************" << endl;
 	midterm.print();
 
-	cout << "FINALS" << endl;
+	cout << endl << "FINALS" << endl;
+	cout << "**************************************************" << endl;
 	final.print();
 }
 
@@ -111,14 +116,22 @@ void GradeBookMenu::doAdd(){ // add to tree.
 }
 
 void GradeBookMenu::doEdit(){ // edit any fields
-	// delete assignment
-	// call doAdd()
-	//done
+	this->doRemove();
+	this->doAdd();
 }
 
 void GradeBookMenu::doRemove(){ // remove a node from the tree
-	// find assignment
-	// delete
+	string user_desc;
+	cin.ignore();
+	cout << "Enter the name of the assignment: "; getline(cin, user_desc);
+	DateTime time;
+	Assignment user_assignment("", "", user_desc, time, time, 0, 0);
+	assignments.erase(user_assignment);
+	quizzes.erase(user_assignment);
+	labs.erase(user_assignment);
+	midterm.erase(user_assignment);
+	final.erase(user_assignment);
+	cout << "Assignment removed." << endl;
 }
 
 void GradeBookMenu::calculateGrade() { // implement your grade and display.
@@ -168,6 +181,12 @@ void GradeBookMenu::readAssignment() { // reads assignment-data.csv
 			final.insert(new_assignment);
 	}
 	inFile.close();
+}
+
+void GradeBookMenu::writeAssignment() {
+	ofstream outFile(ASSIGNMENT_DATA);
+	outFile << "Id,GroupId,Description,Start Date,End Date,Possible Points,Points" << endl;
+	outFile << 
 }
 
 void GradeBookMenu::readCourse() { // reads course-data.csv

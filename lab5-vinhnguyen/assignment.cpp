@@ -78,15 +78,26 @@ int Assignment::get_totalPoints() const {
 
 // Compare operator overloads
 bool Assignment::operator<(Assignment& other_assign) {
-    return this->id < other_assign.id;
+    return this->description < other_assign.description;
 }
 
 bool Assignment::operator>(Assignment& other_assign) {
-    return this->id > other_assign.id;
+    return this->description > other_assign.description;
+}
+
+bool Assignment::operator==(Assignment& other) {
+    return this->description == other.description;
 }
 
 // cout operator overload
 ostream& operator<<(ostream& os, const Assignment& assignment) {
     os << assignment.description << endl;
     return os;
+}
+
+//print method for write
+string Assignment::get_string() {
+    string line;
+    line += groupId + "," + id + "," + description + "," + start.toString() + "," + end.toString() + "," + to_string(possiblePoints) + to_string(totalPoints);
+    return line;
 }

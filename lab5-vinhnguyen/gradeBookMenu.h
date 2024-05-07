@@ -43,6 +43,8 @@ private:
 
 	void readGrade(); // reads grade-data.csv
 
+	void writeAssignment(); // writes assignment-data.csv
+
 	BinarySearchTree<Assignment> assignments;
 
 	BinarySearchTree<Assignment> quizzes;

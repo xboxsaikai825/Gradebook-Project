@@ -35,8 +35,13 @@ public:
 
 	bool operator>(Assignment& other_assign);
 
+	bool operator==(Assignment& other);
+
 	// cout operator overload
 	friend ostream& operator<<(ostream& os, const Assignment& assignment);
+
+	//method for write
+	string get_string();
 
 private:
 	string id;

@@ -1,4 +1,5 @@
 #include <string>
+#include <iomanip>
 #include <iostream>
 
 using namespace std;
@@ -90,7 +91,6 @@ private:
     Node<T>* root;
 };
 
-
 template <typename T>
 void Node<T>::add_node(Node<T>* new_node)
 {
@@ -124,7 +124,7 @@ void Node<T>::print() const
     if (left != nullptr) {
         left->print();
     }
-    cout << data << endl;
+    cout << setw(50) << data ;
     if (right != nullptr) {
         right->print();
     }
