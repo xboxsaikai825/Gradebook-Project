@@ -43,8 +43,6 @@ private:
 
 	void readGrade(); // reads grade-data.csv
 
-	void writeAssignment(); // writes assignment-data.csv
-
 	BinarySearchTree<Assignment> assignments;
 
 	BinarySearchTree<Assignment> quizzes;
@@ -60,4 +58,16 @@ private:
 	BinarySearchTree<Course> courses;
 
 	BinarySearchTree<Faculty> faculty;
+
+	double assignmentsTotalPoints;
+	double quizzesTotalPoints;
+	double labsTotalPoints;
+	double midtermsTotalPoints;
+	double finalsTotalPoints;
+
+	int assignmentsPoints;
+	int quizzesPoints;
+	int labsPoints;
+	int midtermsPoints;
+	int finalsPoints;
 };

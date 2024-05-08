@@ -50,15 +50,20 @@ int Grade::get_weight() const {
 
 // Compare operators overload
 bool Grade::operator<(Grade& other_grade) {
-	return this->groupId < other_grade.groupId;
+	return this->description < other_grade.description;
 }
 
 bool Grade::operator>(Grade& other_grade) {
-	return this->groupId > other_grade.groupId;
+	return this->description > other_grade.description;
 }
 
 // Cout operator overload
 ostream& operator<<(ostream& os, const Grade& grade) {
 	os << grade.description << ": "  << grade.weight << "%" << endl;
 	return os;
+}
+
+// operator== overload
+bool Grade::operator==(Grade& other) {
+	return this->description == other.description;
 }

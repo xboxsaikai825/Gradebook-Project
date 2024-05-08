@@ -24,6 +24,7 @@ public:
     void add_node(Node<T>* new_node);
     void delete_tree(Node<T>* node);
     void print() const;
+    string toString();
     friend class BinarySearchTree<T>;
 };
 
@@ -76,6 +77,11 @@ public:
     void print() const;
 
     /**
+       tostring method
+    */
+    string toString();
+
+    /**
        Assignment operator
     */
     BinarySearchTree<T>& operator=(BinarySearchTree<T>& other_tree);
@@ -85,6 +91,10 @@ public:
     */
     int get_total() const;
 
+    /**
+       Search method
+    */
+    T search(T key);
 private:
     int total;
     void add_node(Node<T>* new_node);
@@ -124,10 +134,24 @@ void Node<T>::print() const
     if (left != nullptr) {
         left->print();
     }
-    cout << setw(50) << data ;
+    cout << setw(50) << data;
     if (right != nullptr) {
         right->print();
     }
+}
+
+template <typename T>
+string Node<T>::toString()
+{
+    string info;
+    if (left != nullptr) {
+        info += left->toString();
+    }
+    info += data.toString();
+    if (right != nullptr) {
+        info += right->toString();
+    }
+    return info;
 }
 
 template <typename T>
@@ -157,6 +181,41 @@ BinarySearchTree<T>::BinarySearchTree(BinarySearchTree& tree) {
 template <typename T>
 BinarySearchTree<T>::~BinarySearchTree() {
     root->delete_tree(root);
+}
+
+template <typename T>
+T BinarySearchTree<T>::search(T element) {
+    Node<T>* empty = new Node<T>;
+    Node<T>* found_root = root;
+    Node<T>* parent = nullptr;
+    bool found = false;
+    while (!found && found_root != nullptr)
+    {
+        if (element == found_root->data)
+        {
+            found = true;
+        }
+        else
+        {
+            parent = found_root;
+            if (element < found_root->data)
+            {
+                found_root = found_root->left;
+            }
+            else
+            {
+                found_root = found_root->right;
+            }
+        }
+    }
+    if (found_root == nullptr)
+        return empty->data;
+    return found_root->data;
+}
+
+template <typename T>
+string BinarySearchTree<T>::toString() {
+    return root->toString();
 }
 
 template <typename T>

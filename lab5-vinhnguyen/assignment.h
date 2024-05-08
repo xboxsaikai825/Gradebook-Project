@@ -41,7 +41,7 @@ public:
 	friend ostream& operator<<(ostream& os, const Assignment& assignment);
 
 	//method for write
-	string get_string();
+	string toString();
 
 private:
 	string id;

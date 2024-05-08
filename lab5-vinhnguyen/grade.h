@@ -28,12 +28,14 @@ public:
 
     bool operator>(Grade& other_grade);
 
+    bool operator==(Grade& other);
+
     // cout operator overload
     friend ostream& operator<<(ostream& os, const Grade& grade);
 private:
 	string groupId;
 	string section;
 	string description;
-	int weight;
+	double weight;
 };
 

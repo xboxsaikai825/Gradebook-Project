@@ -9,6 +9,7 @@
 #include <iomanip>
 #include "dateTime.h"
 #include "dateType.h"
+#include <sstream>
 
 using namespace std;
 
@@ -41,5 +42,11 @@ void DateTime::setDateTime(string dateTime) {
 // Return MM/DD/YYYY HH:MM:SS
 string DateTime::toString() {
 	string stime = !isEmpty() ? (" " + to_string(hr) + ":" + to_string(min) + ":" + to_string(sec)) : "";
-	return this->getDate().toString() + stime;
+
+	// Format the time components with leading zeros if necessary
+	stringstream ss;
+	ss << setw(2) << setfill('0') << hr << ":" << setw(2) << setfill('0') << min << ":" << setw(2) << setfill('0') << sec;
+	string formattedTime = ss.str();
+
+	return this->getDate().toString() + " " + formattedTime;
 }

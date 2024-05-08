@@ -91,13 +91,11 @@ bool Assignment::operator==(Assignment& other) {
 
 // cout operator overload
 ostream& operator<<(ostream& os, const Assignment& assignment) {
+    //os << assignment.id << ',' << assignment.groupId << ',' << assignment.description << ',' << assignment.get_start().toString() << ',' << assignment.get_end().toString() << ',' << assignment.possiblePoints << ',' << assignment.totalPoints << endl;
     os << assignment.description << endl;
     return os;
 }
 
-//print method for write
-string Assignment::get_string() {
-    string line;
-    line += groupId + "," + id + "," + description + "," + start.toString() + "," + end.toString() + "," + to_string(possiblePoints) + to_string(totalPoints);
-    return line;
+string Assignment::toString() {
+    return id + ',' + groupId + ',' + description + ',' + start.toString() + ',' + end.toString() + ',' + to_string(possiblePoints) + ',' + to_string(totalPoints) + '\n';
 }

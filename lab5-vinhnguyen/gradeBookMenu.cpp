@@ -79,12 +79,71 @@ void GradeBookMenu::doList() { // display all data from the root of the tree.
 	cout << endl << "FINALS" << endl;
 	cout << "**************************************************" << endl;
 	final.print();
+	cout << endl;
 }
 
 void GradeBookMenu::doView() { // view individual assignment and view group of assignments in rows and columns
-	courses.print();
-	faculty.print();
-	gradingScale.print();
+	string option;
+	cout << "a) View an individual assignment" << endl;
+	cout << "b) view assignments by specific group" << endl;
+	cin >> option;
+
+	if (option == "a") {
+		Assignment empty;
+		Assignment assign;
+		string input_desc;
+		cin.ignore();
+		cout << "Enter the assignment's name: "; getline(cin,input_desc);
+		DateTime time;
+		Assignment user_assignment("", "", input_desc, time, time, 0, 0);
+		if (!(assignments.search(user_assignment) == empty))
+			assign = assignments.search(user_assignment);
+		else if (!(quizzes.search(user_assignment) == empty))
+			assign = quizzes.search(user_assignment);
+		else if (!(labs.search(user_assignment) == empty))
+			assign = labs.search(user_assignment);
+		else if (!(labs.search(user_assignment) == empty))
+			assign = midterm.search(user_assignment);
+		else
+			assign = final.search(user_assignment);
+		
+		cout << endl << "ASSIGNMENT" << endl;
+		cout << "**************************************************" << endl;
+		cout << setw(50) << "NAME: " << assign.get_description() << endl;
+		cout << setw(50) << "START: " << assign.get_start().toString() << endl;
+		cout << setw(50) << "END: " << assign.get_end().toString() << endl;
+		cout << setw(50) << "POINTS: " << assign.get_totalPoints() << endl;
+		cout << setw(50) << "TOTAL POINTS: " << assign.get_possiblePoints() << endl;
+	}
+	else {
+		string user_section;
+		cout << "a) View assignments\nb) View quizzes\nc) View labs\nd) View midterms\ne) View finals\n"; cin >> user_section;
+		if (user_section == "a") {
+			cout << endl << "ASSIGNMENTS" << endl;
+			cout << "**************************************************" << endl;
+			assignments.print();
+		}
+		else if (user_section == "b") {
+			cout << endl << "QUIZZES" << endl;
+			cout << "**************************************************" << endl;
+			quizzes.print();
+		}
+		else if (user_section == "c") {
+			cout << endl << "LABS" << endl;
+			cout << "**************************************************" << endl;
+			labs.print();
+		}
+		else if (user_section == "d") {
+			cout << endl << "MIDTERMS" << endl;
+			cout << "**************************************************" << endl;
+			midterm.print();
+		}
+		else {
+			cout << endl << "FINALS" << endl;
+			cout << "**************************************************" << endl;
+			final.print();
+		}
+	}
 }
 
 void GradeBookMenu::doAdd(){ // add to tree.
@@ -113,11 +172,13 @@ void GradeBookMenu::doAdd(){ // add to tree.
 	else if (groupId == "5")
 		final.insert(new_assignment);
 	cout << "Assignment added." << endl;
+	this->doSave();
 }
 
 void GradeBookMenu::doEdit(){ // edit any fields
 	this->doRemove();
 	this->doAdd();
+	this->doSave();
 }
 
 void GradeBookMenu::doRemove(){ // remove a node from the tree
@@ -132,14 +193,53 @@ void GradeBookMenu::doRemove(){ // remove a node from the tree
 	midterm.erase(user_assignment);
 	final.erase(user_assignment);
 	cout << "Assignment removed." << endl;
+	this->doSave();
 }
 
 void GradeBookMenu::calculateGrade() { // implement your grade and display.
+	Grade assignment_scale("", "", "Assignments", 0);
+	Grade quiz_scale("", "", "Quizzes", 0);
+	Grade labs_scale("", "", "Labs", 0);
+	Grade midterm_scale("", "", "Midterm", 0);
+	Grade final_scale("", "", "Final Exam", 0);
 
+	// finds weight for each section
+	assignment_scale = gradingScale.search(assignment_scale);
+	quiz_scale = gradingScale.search(quiz_scale);
+	labs_scale = gradingScale.search(labs_scale);
+	midterm_scale = gradingScale.search(midterm_scale);
+	final_scale = gradingScale.search(final_scale);
+
+	// calculate percentage of each group
+	double assignmentPercentage = (assignmentsPoints / assignmentsTotalPoints);
+	double quizPercentage = (quizzesPoints / quizzesTotalPoints);
+	double labPercentage = (labsPoints / labsTotalPoints);
+	double midtermPercentage = (midtermsPoints / midtermsTotalPoints);
+	double finalPercentage = (finalsPoints / finalsTotalPoints);
+
+	double weightedGrade = assignment_scale.get_weight() * assignmentPercentage + quiz_scale.get_weight() * quizPercentage + labs_scale.get_weight() * labPercentage + midterm_scale.get_weight() * midtermPercentage + final_scale.get_weight() * finalPercentage;
+
+	cout << endl << "SECTION WEIGHTS" << endl;
+	cout << "**************************************************" << endl;
+	cout << setw(47) << "ASSIGNMENTS: " << assignment_scale.get_weight() << "%" << endl;
+	cout << setw(47) << "QUIZZES: " << quiz_scale.get_weight() << "%" << endl;
+	cout << setw(47) << "LABS: " << labs_scale.get_weight() << "%" << endl;
+	cout << setw(47) << "MIDTERM: " << midterm_scale.get_weight() << "%" << endl;
+	cout << setw(47) << "FINAL: " << final_scale.get_weight() << "%" << endl;
+
+	cout << endl << "FINAL GRADE" << endl;
+	cout << "**************************************************" << endl;
+	cout << setw(50) << setprecision(3) << weightedGrade << "%" << endl;
 }
 
 void GradeBookMenu::doSave() { // save data to.csv file
-
+	ofstream outFile(ASSIGNMENT_DATA);
+	outFile << "Id,GroupId,Description,Start Date,End Date,Possible Points,Points" << endl;
+	outFile << assignments.toString();
+	outFile << quizzes.toString();
+	outFile << labs.toString();
+	outFile << midterm.toString();
+	outFile << final.toString();
 }
 
 void GradeBookMenu::readAssignment() { // reads assignment-data.csv
@@ -169,24 +269,33 @@ void GradeBookMenu::readAssignment() { // reads assignment-data.csv
 		new_assignment.set_possiblePoints(stoi(text));
 		getline(ss, text, ',');
 		new_assignment.set_totalPoints(stoi(text));
-		if (new_assignment.get_groupId() == "1")
+		if (new_assignment.get_groupId() == "1") {
 			assignments.insert(new_assignment);
-		else if (new_assignment.get_groupId() == "2")
+			assignmentsTotalPoints += new_assignment.get_possiblePoints();
+			assignmentsPoints += new_assignment.get_totalPoints();
+		}
+		else if (new_assignment.get_groupId() == "2") {
 			quizzes.insert(new_assignment);
-		else if (new_assignment.get_groupId() == "3")
+			quizzesTotalPoints += new_assignment.get_possiblePoints();
+			quizzesPoints += new_assignment.get_totalPoints();
+		}
+		else if (new_assignment.get_groupId() == "3") {
 			labs.insert(new_assignment);
-		else if (new_assignment.get_groupId() == "4")
+			labsTotalPoints += new_assignment.get_possiblePoints();
+			labsPoints += new_assignment.get_totalPoints();
+		}
+		else if (new_assignment.get_groupId() == "4") {
 			midterm.insert(new_assignment);
-		else if (new_assignment.get_groupId() == "5")
+			midtermsTotalPoints += new_assignment.get_possiblePoints();
+			midtermsPoints += new_assignment.get_totalPoints();
+		}
+		else if (new_assignment.get_groupId() == "5") {
 			final.insert(new_assignment);
+			finalsTotalPoints += new_assignment.get_possiblePoints();
+			finalsPoints += new_assignment.get_totalPoints();
+		}
 	}
 	inFile.close();
-}
-
-void GradeBookMenu::writeAssignment() {
-	ofstream outFile(ASSIGNMENT_DATA);
-	outFile << "Id,GroupId,Description,Start Date,End Date,Possible Points,Points" << endl;
-	outFile << 
 }
 
 void GradeBookMenu::readCourse() { // reads course-data.csv
