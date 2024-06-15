@@ -1,33 +1,20 @@
-# My Awesome Project
-Write a short sentence or two about this project and what it does. Be sure to include a link and a screenshot (we're front end devs so we can actually see our work!).
+# Gradebook Project
 
-**Link to project:** http://recruiters-love-seeing-live-demos.com/
+This program calculates the final grade percentage of all assignments according to a grading scale. Users can add, delete or modify assignments which will be saved to a csv file.
 
-![alt tag](http://placecorgi.com/1200/650)
+![image](https://github.com/xboxsaikai825/Gradebook-Project/assets/158383046/a9e05836-a93f-4bbd-aca8-42e6a4a846c0)
+
 
 ## How It's Made:
 
-**Tech used:** HTML, CSS, JavaScript, Framework of choice
+**Tech used:** c++
 
-Here's where you can go to town on how you actually built this thing. Write as much as you can here, it's totally fine if it's not too much just make sure you write *something*. If you don't have too much experience on your resume working on the front end that's totally fine. This is where you can really show off your passion and make up for that ten fold.
-
-## Optimizations
-*(optional)*
-
-You don't have to include this section but interviewers *love* that you can not only deliver a final product that looks great but also functions efficiently. Did you write something then refactor it later and the result was 5x faster than the original implementation? Did you cache your assets? Things that you write in this section are **GREAT** to bring up in interviews and you can use this section as reference when studying for technical interviews!
+Each assignment is organized in a binary search tree where the program writes its data to a csv file. The program will read the csv file on start and access each grade from the assignment. The final grade is calculated by summing the products of each grade section by its weight. 
 
 ## Lessons Learned:
 
-No matter what your experience level, being an engineer means continuously learning. Every time you build something you always have those *whoa this is awesome* or *wow I actually did it!* moments. This is where you should share those moments! Recruiters and interviewers love to see that you're self-aware and passionate about growing.
+The main point of this project is to learn new data structures and how they are implemented. I learned how binary search trees are implemented and how to work with them for future coding projects.
 
-## Examples:
-Take a look at these couple examples that I have in my own portfolio:
-
-**Palettable:** https://github.com/alecortega/palettable
-
-**Twitter Battle:** https://github.com/alecortega/twitter-battle
-
-**Patch Panel:** https://github.com/alecortega/patch-panel
 
 
 
