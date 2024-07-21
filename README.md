@@ -7,7 +7,7 @@ This program calculates the final grade percentage of all assignments according 
 
 ## How It's Made:
 
-**Tech used:** c++
+**Tech used:** C++
 
 Each assignment is organized in a binary search tree where the program writes its data to a csv file. The program will read the csv file on start and access each grade from the assignment. The final grade is calculated by summing the products of each grade section by its weight. 
 
